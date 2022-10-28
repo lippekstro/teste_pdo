@@ -9,6 +9,7 @@ try{
 
     $pessoa->deletar();
 
+    setcookie('apagado', true);
     header('Location: index.php');
 }catch(Exception $e){
     echo $e->getMessage();

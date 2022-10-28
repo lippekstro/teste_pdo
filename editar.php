@@ -35,7 +35,7 @@ try {
         <input type="text" id="nome" name="nome" value="<?= $pessoa->nome ?>">
 
         <label for="idade">Idade</label>
-        <input type="numbe" name="idade" id="idade" value="<?= $pessoa->idade ?>">
+        <input type="number" name="idade" id="idade" value="<?= $pessoa->idade ?>">
 
         <input type="submit" value="Atualizar">
     </form>

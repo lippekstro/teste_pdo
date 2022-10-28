@@ -16,6 +16,7 @@ try{
     $pessoa->inserir();
     // chama o metodo inserir da classe pessoas para inserir o novo registro
 
+    setcookie('inserido', true);
     header('Location: index.php');
     // depois de tudo redireciona o usuario para a pagina index
 }catch(Exception $e){

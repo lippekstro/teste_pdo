@@ -25,9 +25,13 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/toast.css">
 </head>
 
 <body>
+    <div>
+        <p id="exibe"></p>
+    </div>
     <div>
         <button><a href="inserir.php">Adicionar</a></button>
     </div>
@@ -57,6 +61,8 @@ try {
             <p>NADA CADASTRADO</p>
         </div>
     <?php endif ?>
+
+    <script src="js/toast.js"></script>
 </body>
 
 </html>
