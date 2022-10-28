@@ -2,11 +2,21 @@
 require_once 'pessoas.php';
 require_once 'conexao.php';
 
-try {
-    $pessoa = new Pessoas();
-    $lista = $pessoa->listar();
-} catch (Exception $e) {
-    echo $e->getMessage();
+if (isset($_GET['busca'])) {
+    $palavra = $_GET['busca'];
+    try {
+        $pessoa = new Pessoas();
+        $lista = $pessoa->listarPorNome($palavra);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+} else {
+    try {
+        $pessoa = new Pessoas();
+        $lista = $pessoa->listar();
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 }
 
 
@@ -33,11 +43,24 @@ try {
     <div>
         <p id="exibe"></p>
     </div>
-    <div>
-        <button id="btn_adicionar"><a href="inserir.php"><span class="material-symbols-outlined">add</span></a></button>
-    </div>
-    <?php if (count($lista) > 0) : ?>
+    <div class="flex-container space-between">
         <div>
+            <button id="btn_adicionar"><a href="inserir.php"><span class="material-symbols-outlined">add</span></a></button>
+        </div>
+        <div id="form_busca">
+            <form action="index.php" id="">
+                <div class="flex-container">
+                    <label for="busca"><span class="material-symbols-outlined">search</span></label>
+                    <input type="search" name="busca" id="busca">
+                    <input type="submit" value="Buscar">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <?php if (count($lista) > 0) : ?>
+        <div class="flex-container">
             <table>
                 <tr>
                     <th>id</th>
@@ -51,8 +74,8 @@ try {
                         <td><?= $item['nome'] ?></td>
                         <td><?= $item['idade'] ?></td>
                         <td><?= $item['data_registro'] ?></td>
-                        <td><button id="editar"><a href="editar.php?id_pessoa=<?=$item['id_pessoa']?>"><span class="material-symbols-outlined">edit</span></a></button></td>
-                        <td><button id="apagar"><a href="apagar_controller.php?id_pessoa=<?=$item['id_pessoa']?>"><span class="material-symbols-outlined">delete</span></a></button></td>
+                        <td><button id="editar"><a href="editar.php?id_pessoa=<?= $item['id_pessoa'] ?>"><span class="material-symbols-outlined">edit</span></a></button></td>
+                        <td><button id="apagar"><a href="apagar_controller.php?id_pessoa=<?= $item['id_pessoa'] ?>"><span class="material-symbols-outlined">delete</span></a></button></td>
                     </tr>
                 <?php endforeach ?>
             </table>

@@ -13,7 +13,8 @@ table, th, td {
 }
 
 table {
-    margin: 4px;
+    margin: 0 12px;
+    width: 100%;
 }
 
 #editar {
@@ -37,7 +38,7 @@ table {
 }
 
 #btn_adicionar {
-    margin: 4px;
+    margin: 4px 12px;
     background-color: green;
 }
 
@@ -48,4 +49,21 @@ table {
 
 #btn_adicionar span {
     padding: 4px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-container table {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+#form_busca {
+    margin: 4px 12px;
 }

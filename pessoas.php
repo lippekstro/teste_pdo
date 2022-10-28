@@ -90,6 +90,24 @@ class Pessoas{
         // executa
     }
 
+    public static function listarPorNome($palavra){ // lista os registros por palavra chave
+        $palavra = '%' . $palavra . '%';
+        $query = "SELECT * FROM pessoas WHERE nome LIKE :palavra";
+        // selecione todas as colunas da tabela
+        $conexao = Conexao::conectar();
+        // cria conexao
+        $stmt = $conexao->prepare($query);
+        // prepara a query
+        $stmt->bindValue(":palavra", $palavra);
+        // vincula os parametros
+        $stmt->execute();
+        // executa a query e guarda o que foi retornado em uma variavel resultado
+        $lista = $stmt->fetchAll();
+        // transforma todos os valores obtidos na variavel resultado em um array associativo ("chave":"valor")
+        return $lista;
+        // devolve o array
+    }
+
 
 
 
