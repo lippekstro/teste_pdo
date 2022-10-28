@@ -16,6 +16,36 @@ table {
     margin: 4px;
 }
 
-button {
+#editar {
+    background-color: blue;
+}
+
+#editar a {
+    color: white;
+}
+
+#apagar {
+    background-color: red;
+}
+
+#apagar a {
+    color: white;
+}
+
+#editar span, #apagar span {
+    padding: 4px;
+}
+
+#btn_adicionar {
     margin: 4px;
+    background-color: green;
+}
+
+#btn_adicionar a {
+    color: white;
+    text-decoration: none;
+}
+
+#btn_adicionar span {
+    padding: 4px;
 }

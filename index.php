@@ -26,6 +26,7 @@ try {
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -33,7 +34,7 @@ try {
         <p id="exibe"></p>
     </div>
     <div>
-        <button><a href="inserir.php">Adicionar</a></button>
+        <button id="btn_adicionar"><a href="inserir.php"><span class="material-symbols-outlined">add</span></a></button>
     </div>
     <?php if (count($lista) > 0) : ?>
         <div>
@@ -50,8 +51,8 @@ try {
                         <td><?= $item['nome'] ?></td>
                         <td><?= $item['idade'] ?></td>
                         <td><?= $item['data_registro'] ?></td>
-                        <td><a href="editar.php?id_pessoa=<?=$item['id_pessoa']?>">EDITAR</a></td>
-                        <td><a href="apagar_controller.php?id_pessoa=<?=$item['id_pessoa']?>">APAGAR</a></td>
+                        <td><button id="editar"><a href="editar.php?id_pessoa=<?=$item['id_pessoa']?>"><span class="material-symbols-outlined">edit</span></a></button></td>
+                        <td><button id="apagar"><a href="apagar_controller.php?id_pessoa=<?=$item['id_pessoa']?>"><span class="material-symbols-outlined">delete</span></a></button></td>
                     </tr>
                 <?php endforeach ?>
             </table>

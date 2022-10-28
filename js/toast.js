@@ -1,7 +1,5 @@
 var exibe = document.getElementById("exibe")
 
-console.log(document.cookie.indexOf(['atualizado=']))
-
 if(document.cookie.indexOf(['atualizado='])>=0){
     exibe.innerHTML = "Registro Atualizado Com Sucesso!"
     exibe.style.backgroundColor = "blue"

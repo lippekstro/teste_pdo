@@ -12,7 +12,7 @@
         <input type="text" id="nome" name="nome">
 
         <label for="idade">Idade</label>
-        <input type="numbe" name="idade" id="idade">
+        <input type="number" name="idade" id="idade">
 
         <input type="submit" value="Cadastrar">
     </form>
